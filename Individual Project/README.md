@@ -4,39 +4,42 @@ This repository contains the reproducibility work for the **Recursive Language M
 
 The study focuses on the "Needle-in-a-Haystack" (NIAH) task, evaluating the agent's ability to retrieve specific information from a massive **38.5 MB** context.
 
-## 1. Project Overview
-Recursive Language Models (RLM) address context window limitations by integrating a **Python REPL environment**. This allows the agent to iteratively decompose long-context tasks into manageable sub-queries. 
 
-This project reproduces the NIAH capability and includes an **Ablation Study** where the recursive sub-query tool is disabled to observe emergent agentic behavior.
+## 1. Project Overview
+
+[cite_start]Recursive Language Models (RLM) is an innovative framework designed to bypass the inherent context window limitations of traditional Large Language Models (LLMs)[cite: 4]. [cite_start]The core philosophy of RLM involves the integration of a Python REPL (Read-Eval-Print Loop) environment, which empowers the agent to interactively explore, transform, and analyze massive datasets[cite: 5]. [cite_start]By employing a recursive task-decomposition mechanism, the agent can "divide and conquer" long-context challenges—breaking down a high-token task into smaller, manageable sub-queries that are processed iteratively[cite: 6].
+
+[cite_start]The primary objective of this reproducibility study is to verify the "Needle-in-a-Haystack" (NIAH) capability of the RLM framework[cite: 7]. [cite_start]The task involves locating and extracting a specific "magic number" hidden within a massive, randomly generated text file[cite: 8]. [cite_start]For this experiment, a context of approximately 38.5 MB (roughly 1 million lines) was used to evaluate the agent's ability to successfully retrieve a single data point[cite: 9]. [cite_start]This project also includes an **Ablation Study** where the recursive sub-query tool is disabled to observe emergent agentic behavior[cite: 47].
 
 ---
 
 ## 2. Setup & Installation
 
 ### Prerequisites
-* **Python**: 3.10 or higher
-* **Hardware**: Tested on MacBook Air M2 (16GB Unified Memory)
+* [cite_start]**Python**: 3.10 or higher[cite: 13].
+* [cite_start]**Hardware**: MacBook Air with an M2 chip and 16GB of Unified Memory[cite: 11].
 
 ### Installation
-1. **Clone the repository**:
-   ```
-   git clone <your-github-repo-link>
-   cd rlm-minimal
-   、、、
-   
-2. **Setup & Installation (Continued)**
+1.  **Clone the repository**:
+    ```bash
+    git clone <your-github-repo-link>
+    cd rlm-minimal
+    ```
 
-[cite_start]**Install required dependencies[cite: 13]:**
+2.  [cite_start]**Install required dependencies [cite: 13]**:
+    ```bash
+    [cite_start]pip install openai python-dotenv rich [cite: 14, 15, 16]
+    ```
+
+### API Configuration
+[cite_start]To optimize cost-efficiency and reasoning performance, DeepSeek-V3 was selected as the underlying model[cite: 18]. [cite_start]Access was facilitated through a third-party API aggregator using an OpenAI-compatible interface[cite: 19].
+
+Create a `.env` file in the root directory and add your API credentials:
+```env
+OPENAI_API_KEY=your_api_key_here
+[cite_start]OPENAI_BASE_URL=[https://api.deepseek.com/v1](https://api.deepseek.com/v1) [cite: 19]
+
 ```
-pip install openai python-dotenv rich [cite: 14, 15, 16]
-、、、
-
-API Configuration:
-Create a .env file in the root directory and add your API credentials.
-Note: We recommend using DeepSeek-V3 for its high cost-efficiency and OpenAI-compatible interface.
-
-OPENAI_API_KEY=your_api_key_here 
-OPENAI_BASE_URL=[https://api.deepseek.com/v1](https://api.deepseek.com/v1) [cite: 19]
 
 ---
 
