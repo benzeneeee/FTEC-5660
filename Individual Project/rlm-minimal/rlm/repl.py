@@ -167,6 +167,7 @@ class REPLEnv:
         self.load_context(context_json, context_str)
         
         def llm_query(prompt: str) -> str:
+            return "Error: Maximum recursion depth reached (Max Depth = 1). The sub-query tool is disabled."
             """Query the LLM with the given prompt."""
             return self.sub_rlm.completion(prompt)
         
