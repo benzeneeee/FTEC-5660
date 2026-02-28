@@ -95,12 +95,12 @@ Comparative Analysis (Table 2)
 
 The study revealed significant **Emergent Agentic Adaptability** in resource-constrained environments. When the primary recursive tool was disabled, the agent demonstrated high tool-use flexibility:
 
-* 
+
 **Strategy Pivot:** It autonomously shifted from "semantic reasoning" to "programmatic search" using the Python `re` module to scan the local context string directly.
 
-* 
+
 **Efficiency Gain:** This shift resulted in an **80% reduction in reasoning steps** and a **70% reduction in API costs**.
   
-* 
+ 
 **Robustness:** Programmatic search via code execution proved significantly more robust and cost-effective than recursive semantic analysis for deterministic retrieval tasks.
   
