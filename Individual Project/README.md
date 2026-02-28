@@ -1,31 +1,40 @@
-Reproducibility Study: Recursive Language Models (RLM)
-This repository contains the reproducibility work for the Recursive Language Models (RLM) framework , as part of the FTEC5660: Agentic AI for Business and FinTech course.
+# Reproducibility Study: Recursive Language Models (RLM)
 
-The study focuses on the "Needle-in-a-Haystack" (NIAH) task, evaluating the agent's ability to retrieve specific information from a massive 38.5 MB context.
+This repository contains the reproducibility work for the **Recursive Language Models (RLM)** framework, submitted as part of the **FTEC5660: Agentic AI for Business and FinTech** course.
 
-1. Project Overview
-Recursive Language Models (RLM) address context window limitations by integrating a Python REPL environment. This allows the agent to iteratively decompose long-context tasks into manageable sub-queries.
+The study focuses on the "Needle-in-a-Haystack" (NIAH) task, evaluating the agent's ability to retrieve specific information from a massive **38.5 MB** context.
 
-This project reproduces the NIAH capability and includes an Ablation Study where the recursive sub-query tool is disabled to observe emergent agentic behavior.
+## 1. Project Overview
+Recursive Language Models (RLM) address context window limitations by integrating a **Python REPL environment**. This allows the agent to iteratively decompose long-context tasks into manageable sub-queries. 
 
-2. Setup & Installation
-Prerequisites
+This project reproduces the NIAH capability and includes an **Ablation Study** where the recursive sub-query tool is disabled to observe emergent agentic behavior.
 
-Python: 3.10 or higher 
+---
 
+## 2. Setup & Installation
 
-Hardware: Tested on MacBook Air M2 (16GB RAM) 
+### Prerequisites
+* **Python**: 3.10 or higher
+* **Hardware**: Tested on MacBook Air M2 (16GB Unified Memory)
 
-Installation
-Clone the repository:
+### Installation
+1. **Clone the repository**:
+   ```bash
+   git clone <your-github-repo-link>
+   cd rlm-minimal
+   
+2. **Setup & Installation (Continued)**
 
-Install required dependencies:
+[cite_start]**Install required dependencies[cite: 13]:**
+```bash
+pip install openai python-dotenv rich [cite: 14, 15, 16]
 
-API Configuration
-Create a .env file in the root directory and add your API credentials. Note: Use DeepSeek-V3 for cost-efficiency.
+API Configuration:
+Create a .env file in the root directory and add your API credentials.
+Note: We recommend using DeepSeek-V3 for its high cost-efficiency and OpenAI-compatible interface.
 
-
-IMPORTANT: Never commit your .env file to GitHub.
+OPENAI_API_KEY=your_api_key_here 
+OPENAI_BASE_URL=[https://api.deepseek.com/v1](https://api.deepseek.com/v1) [cite: 19]
 
 3. Running the Experiments
 Baseline Run (Recursion Enabled)
@@ -65,7 +74,7 @@ Comparative Analysis (Table 2)
 | **API Cost** | ~$0.10 | **~$0.03** |
 | **Solution Strategy** | Semantic Recursion | **Python REPL (Regex)** |
 
-6. Major Findings
+5. Major Findings
 The study revealed Emergent Agentic Adaptability. When the primary recursive tool was disabled, the agent autonomously shifted from semantic reasoning to programmatic search using the Python REPL. This demonstrates that code execution environments provide a robust and cost-effective fallback for deterministic retrieval tasks.
 
 Credits
